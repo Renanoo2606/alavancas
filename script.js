@@ -19,12 +19,12 @@ const headerElement = document.querySelector('header'); // Seleciona o header
 // Nomes dos arquivos de imagem das alavancas
 const leverImages = {
   type1: {
-    up: 'images/Alavanca-fina-1-cima.png',
-    down: 'images/Alavanca-fina-1.png'
+    up: 'Alavanca-fina-1-cima.png',
+    down: 'Alavanca-fina-1.png'
   },
   type2: {
-    up: 'images/Alavanca-fina-2-cima.png',
-    down: 'images/Alavanca-fina-2.png'
+    up: 'Alavanca-fina-2-cima.png',
+    down: 'Alavanca-fina-2.png'
   }
 };
 
