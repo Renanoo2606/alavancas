@@ -1,0 +1,297 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  /* Use a imagem fornecida como fundo */
+  background-image: url('images/Painel-das-alavancas.png');
+  background-size: cover; /* Cobrir toda a área */
+  background-position: center; /* Centralizar a imagem */
+  background-repeat: no-repeat; /* Não repetir a imagem */
+  color: #eee;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  background: rgba(32, 35, 42, 0.8); /* Fundo semi-transparente para melhor leitura */
+  width: 100%;
+  padding: 1.2rem 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-bottom: 3px solid #61dafb;
+  color: #fff; /* Cor do texto do cabeçalho */
+}
+
+main {
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 800px;
+  flex: 1;
+  padding: 1rem;
+  background: none;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  color: #61dafb;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.tab-button.active {
+  border-color: #61dafb;
+  color: #21a1f1;
+}
+
+.screen {
+  display: none;
+}
+
+.screen.active {
+  display: block;
+}
+
+/* Mestre screen */
+.mestre-settings {
+  background: rgba(32, 35, 42, 0.9); /* Fundo mais opaco para configurações */
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+label {
+  margin-right: 1rem;
+  user-select: none;
+  color: #ccc; /* Cor do label */
+}
+
+input[type="number"] {
+  width: 60px;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #61dafb;
+  background: #121417;
+  color: #eee;
+  font-size: 1rem;
+  margin-right: 1rem;
+}
+
+.alavancas-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  gap: 10px;
+}
+
+.alavanca-mestre {
+  display: flex;
+  align-items: center;
+  background: #282c34;
+  border-radius: 7px;
+  padding: 0.5rem 0.8rem;
+  user-select: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: #eee; /* Cor do texto da alavanca mestre */
+}
+
+.alavanca-mestre input[type="checkbox"] {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.alavanca-mestre.selected {
+  background-color: #61dafb;
+  color: #20232a;
+  font-weight: 700;
+}
+
+/* Jogadores screen */
+.alavancas-jogadores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px; /* Aumentar o espaço entre alavancas */
+  justify-content: center;
+  margin-bottom: 1.5rem; /* Mais espaço antes do botão */
+  padding: 1rem 0; /* Espaçamento interno */
+}
+
+.alavanca-jogador {
+  width: 200px; /* Ajustar largura se necessário */
+  height: 280px; /* Ajustar altura se necessário */
+  background: none; /* Remover fundo antigo */
+  border-radius: 0; /* Remover borda arredondada se não combinar */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end; /* Alinhar conteúdo na base */
+  cursor: pointer;
+  box-shadow: none; /* Remover sombra antiga */
+  user-select: none;
+  transition: transform 0.2s ease;
+  position: relative; /* Para posicionar a label */
+}
+
+.alavanca-img {
+  width: 200px; /* Largura da imagem da alavanca */
+  height: 280px; /* Altura da imagem da alavanca */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center bottom; /* Alinhar imagem na base */
+  margin-bottom: 5px; /* Espaço entre imagem e label */
+}
+
+.alavanca-label {
+  color: #fff; /* Cor branca para melhor contraste */
+  font-weight: 600;
+  font-size: 0.9rem; /* Tamanho da fonte da label */
+  user-select: none;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Sombra para legibilidade */
+  text-align: center;
+  width: 100%;
+}
+
+/* Botão play no canto inferior direito e menor */
+button#play-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 80px; /* Tamanho menor */
+  height: 80px;
+  margin: 0; /* Remove a margem antiga */
+  padding: 0;
+  border-radius: 50%;
+  background-image: url('images/Butao.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  border: none;
+  font-size: 0;
+  color: transparent;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button#play-btn:active {
+  transform: scale(0.95);
+}
+
+.feedback {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  height: 28px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.feedback.success {
+  color: #76ff7b; /* Verde mais vibrante */
+}
+
+.feedback.fail {
+  color: #ff6b6b; /* Vermelho mais vibrante */
+}
+
+.presentation-mode-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(58, 123, 213, 0.8);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        
+        .presentation-mode-btn:hover {
+            background: rgba(58, 123, 213, 1);
+        }
+
+/* Fullscreen Styles */
+body.fullscreen-active header {
+  display: none; /* Esconde o header */
+}
+
+body.fullscreen-active .tabs {
+    display: none; /* Esconde as abas */
+}
+
+body.fullscreen-active main {
+    margin-top: 0; /* Remove a margem superior quando o header some */
+    max-width: none; /* Permite ocupar a tela toda */
+    height: 100vh; /* Ocupa toda a altura da viewport */
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    padding: 0; /* Remove padding */
+}
+
+body.fullscreen-active #player-screen {
+    display: flex; /* Usa flexbox para centralizar conteúdo interno */
+    flex-direction: column; /* Empilha alavancas e botão */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    width: 100%;
+    height: 100%;
+    padding-top: 5vh; /* Adiciona um pouco de espaço no topo */
+    padding-bottom: 15vh; /* Adiciona espaço abaixo para o botão não ficar colado */
+    box-sizing: border-box;
+}
+
+body.fullscreen-active .alavancas-jogadores {
+    margin-bottom: 5vh; /* Espaço entre alavancas e botão */
+    padding: 0; /* Remove padding extra */
+    gap: 60px; /* Aumenta um pouco o espaço entre alavancas */
+    flex-grow: 1; /* Permite que as alavancas ocupem espaço */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Reposiciona o botão Play para o canto inferior direito em fullscreen (mantém posição original) */
+body.fullscreen-active button#play-btn {
+    position: fixed; /* Mantém fixo */
+    bottom: 20px;
+    right: 20px;
+    /* Mantém o estilo visual original */
+}
+
+/* Esconde o botão de fullscreen quando já está em fullscreen */
+body.fullscreen-active .presentation-mode-btn {
+    /* O botão de sair do fullscreen será gerenciado pelo JS */
+    /* Mas podemos garantir que ele não interfira no layout se necessário */
+    /* position: fixed; /* Mantém fixo se desejado, ou remove para fluxo */
+    /* top: 20px; */
+    /* right: 20px; */
+}
+
+/* Garante que a tela do mestre não apareça em fullscreen */
+body.fullscreen-active #master-screen {
+    display: none;
+}
+

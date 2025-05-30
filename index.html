@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mesa RPG - Alavancas & Mestre</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>Mesa RPG: Mestre & Jogadores - Alavancas</header>
+
+<div class="tabs" role="tablist" aria-label="Alternar entre tela Mestre e Jogadores">
+  <button class="tab-button active" role="tab" aria-selected="true" aria-controls="player-screen" id="tab-players">Jogadores</button>
+  <button class="tab-button" role="tab" aria-selected="false" aria-controls="master-screen" id="tab-master">Mestre</button>
+</div>
+
+<main>
+  <section id="player-screen" class="screen active" role="tabpanel" aria-labelledby="tab-players" tabindex="0">
+    <div class="alavancas-jogadores" id="player-levers">
+    </div>
+    <button id="play-btn" aria-label="Botão para iniciar a cena">PLAY</button>
+    <div class="feedback" id="player-feedback" role="alert" aria-live="polite"></div>
+
+     <button class="presentation-mode-btn" id="presentation-mode-btn">
+            <i class="fas fa-expand"></i> Full Screen
+        </button>
+  </section>
+
+  <section id="master-screen" class="screen" role="tabpanel" aria-labelledby="tab-master" tabindex="0">
+    <div class="mestre-settings" aria-live="polite">
+      <label for="number-levers">Quantidade de alavancas:</label>
+      <input type="number" id="number-levers" name="number-levers" min="1" max="12" value="4" aria-describedby="lever-count-desc" />
+      <span id="lever-count-desc" class="sr-only">(Escolha de 1 a 12 alavancas)</span>
+
+      <div class="alavancas-list" id="master-levers-list" aria-label="Lista de alavancas disponíveis para ativar na jogabilidade">
+      </div>
+      <p style="margin-top:1rem; font-style: italic; color:#999;">Clique nas alavancas para marcar quais devem ser puxadas para o play ser considerado válido.</p>
+    </div>
+  </section>
+</main>
+</body>
+<script src="script.js"></script>
+</html>
+
