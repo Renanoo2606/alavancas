@@ -9,7 +9,7 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   /* Use a imagem fornecida como fundo */
-  background-image: url('images/Painel-das-alavancas.png');
+  background-image: url('Painel-das-alavancas.png');
   background-size: cover; /* Cobrir toda a área */
   background-position: center; /* Centralizar a imagem */
   background-repeat: no-repeat; /* Não repetir a imagem */
@@ -181,7 +181,7 @@ button#play-btn {
   margin: 0; /* Remove a margem antiga */
   padding: 0;
   border-radius: 50%;
-  background-image: url('images/Butao.png');
+  background-image: url('Butao.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
